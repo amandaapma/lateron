@@ -8,18 +8,15 @@ import Register from "./pages/register";
 import Dashboard from "./pages/dashboard";
 import Generate from "./pages/generate";
 import MyRoadmap from "./pages/myroadmap";
+import Quiz from "./pages/quiz";
 import Profile from "./pages/profile";
 
 export default function App() {
 
   useEffect(() => {
     axios.get("http://localhost:3000/users")
-      .then((res) => {
-        console.log("API CONNECT:", res.data);
-      })
-      .catch((err) => {
-        console.log("ERROR:", err);
-      });
+      .then(() => {})
+      .catch(() => {});
   }, []);
 
   return (
@@ -31,6 +28,7 @@ export default function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/generate" element={<Generate />} />
         <Route path="/my-roadmap" element={<MyRoadmap />} />
+        <Route path="/quiz" element={<Quiz />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
